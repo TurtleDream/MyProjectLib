@@ -100,6 +100,7 @@ namespace MyProjectLib
 			}
 			finally
 			{
+				driver.Quit();
 				String[] names = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\logs\\");
 				Process.Start(names[0]);
 			}
