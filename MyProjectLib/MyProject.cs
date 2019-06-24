@@ -96,9 +96,12 @@ namespace MyProjectLib
 			{
 				logger.Error(exception);
 				MessageBox.Show(exception.ToString());
+				return false;
+			}
+			finally
+			{
 				String[] names = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\logs\\");
 				Process.Start(names[0]);
-				return false;
 			}
 		}
 		private bool check(String str)
