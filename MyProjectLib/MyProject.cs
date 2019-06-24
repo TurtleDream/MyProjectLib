@@ -3,6 +3,8 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,17 +82,22 @@ namespace MyProjectLib
 				if (name.Equals(title))
 				{
 					logger.Info("Тестирование прошло успешно");
+					MessageBox.Show("Тестирование прошло успешно");
 					return true;
 				}
 				else
 				{
 					logger.Error("Несоответствие значений");
+					MessageBox.Show("Несоответствие значений");
 					return false;
 				}//13. Найти и проверить, что наименование товара соответствует запомненному значению.
 			}
 			catch (Exception exception)
 			{
 				logger.Error(exception);
+				MessageBox.Show(exception.ToString());
+				String[] names = Directory.GetFiles(Directory.GetCurrentDirectory() + "\\logs\\");
+				Process.Start(names[0]);
 				return false;
 			}
 		}

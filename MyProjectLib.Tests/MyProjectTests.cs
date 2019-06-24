@@ -21,7 +21,7 @@ namespace MyProjectLib.Tests
 			MyProject myProject = new MyProject(driver);
 			bool actual = myProject.runSerf("Телевизоры", "20000", pool);
 
-			Assert.AreEqual(expected, actual);
+			Assert.AreEqual(expected, actual, "Ошибка теста! Ожидалось - " + expected + ". Получено - " + actual);
 		}
 
 		[TestMethod]
@@ -37,7 +37,7 @@ namespace MyProjectLib.Tests
 			MyProject myProject = new MyProject(driver);
 			bool actual = myProject.runSerf("Наушники", "5000", pool);
 
-			Assert.AreEqual(expected, actual);
+			Assert.AreEqual(expected, actual, "Ошибка теста! Ожидалось - " + expected + ". Получено - " + actual);
 		}
 	}
 }
